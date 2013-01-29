@@ -160,3 +160,5 @@ youtubeManager =
       tag.src = "//www.youtube.com/player_api"
     firstScriptTag = document.getElementsByTagName('script')[0]
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+
+define(youtubeManager) if define?.amd?
