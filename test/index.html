@@ -1,0 +1,17 @@
+<!doctype>
+<script src="../lib/player.js"></script>
+<script>
+  injectYT();
+  var sound;
+  var onYouTubeIframeAPIReady = function() {
+    sound = PlayerJS.createSound({
+      url: 'http://www.youtube.com/watch?v=RIbe8uXS8mE',
+      playerId: 'player',
+      width: 200,
+      height: 200,
+      id: 'id'
+    });
+  };
+</script>
+<h1>Player.js playground</h1>
+<div id="player"></div>
