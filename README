@@ -1,2 +1,2 @@
-player.js is an facade for SoundManager2 and YouTube JS Player API which tries
-to mimic SoundManager2 API.
+YouTubeManager is an wrapper for YouTube JS Player API which tries to mimic
+SoundManager2 API.
