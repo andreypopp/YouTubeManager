@@ -50,7 +50,7 @@ class YoutubeSound
         playerapiid: options.id
 
   onReady: ->
-    this.duration = this.player.getDuration() * 1000
+    this.duration = this.durationEstimate = this.player.getDuration() * 1000
     if this.options.autoPlay
       this.play()
 
