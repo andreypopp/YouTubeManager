@@ -51,6 +51,8 @@ class YoutubeSound
 
   onReady: ->
     this.duration = this.player.getDuration() * 1000
+    if this.options.autoPlay
+      this.play()
 
   onStateChange: ->
     state = this.player.getPlayerState()
@@ -105,7 +107,10 @@ class YoutubeSound
     this.player.pauseVideo()
 
   play: ->
-    this.player.playVideo()
+    if this.player.playVideo?
+      this.player.playVideo()
+    else
+      this.options.autoPlay = true
 
   resume: ->
     this.play()
