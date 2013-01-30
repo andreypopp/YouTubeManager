@@ -145,7 +145,7 @@ youtubeManager =
   createSound: (options) ->
     new YoutubeSound(options)
 
-  setup: (options) ->
+  setup: (options = {}) ->
     oldCallback = window.onYouTubeIframeAPIReady if window.onYouTubeIframeAPIReady?
     window.onYouTubeIframeAPIReady = ->
       options.onready() if options.onready
