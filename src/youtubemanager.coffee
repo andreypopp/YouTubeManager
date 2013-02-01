@@ -27,6 +27,9 @@ class YoutubeSound
     this.position = 0
     this.readyState = 0
 
+    # we don't want to change original options
+    this._autoPlay = this.options.autoPlay
+
     this._poller = undefined
     this._previousState = undefined
 
@@ -51,7 +54,7 @@ class YoutubeSound
 
   onReady: ->
     this.duration = this.durationEstimate = this.player.getDuration() * 1000
-    if this.options.autoPlay
+    if this._autoPlay
       this.play()
 
   onStateChange: ->
@@ -104,13 +107,16 @@ class YoutubeSound
     this.player.mute()
 
   pause: ->
-    this.player.pauseVideo()
+    if this.player.pauseVideo?
+      this.player.pauseVideo()
+    else
+      this._autoPlay = false
 
   play: ->
     if this.player.playVideo?
       this.player.playVideo()
     else
-      this.options.autoPlay = true
+      this._autoPlay = true
 
   resume: ->
     this.play()
@@ -124,8 +130,12 @@ class YoutubeSound
     this.player.setVolume(v)
 
   stop: ->
-    this.player.stopVideo()
-    this.position = 0
+    if this.player.stopVideo?
+      this.player.seekTo(0)
+      this.player.stopVideo()
+      this.position = 0
+    else
+      this._autoPlay = false
 
   toggleMute: ->
     if this.player.isMuted()
