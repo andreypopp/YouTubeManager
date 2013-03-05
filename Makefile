@@ -15,3 +15,7 @@ lib/%.js: src/%.coffee
 
 clean:
 	rm -rf $(LIB)
+
+publish:
+	git push
+	git push --tags
