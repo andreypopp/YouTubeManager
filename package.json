@@ -1,0 +1,28 @@
+{
+  "name": "youtubemanager",
+  "version": "0.3.1",
+  "description": "YouTube player which mimics SoundManager2 Sound object",
+  "main": "lib/youtubemanager.js",
+  "dependencies": {},
+  "repository": {
+      "type": "git",
+      "url": "git://github.com/andreypopp/youtubemanager.git"
+  },
+  "homepage": "https://github.com/andreypopp/youtubemanager",
+  "keywords": [
+      "browser",
+      "youtube",
+      "soundmanager",
+      "soundmanager2",
+      "music",
+      "video",
+      "player",
+      "sound"
+  ],
+  "author": {
+      "name": "Andrey Popp",
+      "email": "8mayday@gmail.com",
+      "url": "http://andreypopp.com"
+  },
+  "license": "MIT"
+}
