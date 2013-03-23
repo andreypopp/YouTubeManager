@@ -179,3 +179,4 @@ youtubeManager =
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
 define(youtubeManager) if define?.amd?
+module.exports = youtubeManager if module?.exports?
